@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" Value="Please copy me" id="textToCopy" readonly>
+    <button id="copybtn">Copy</button>
+    <script>
+        function copyToClipboard(){
+            const textToCopy = document.getElementById('textToCopy');
+            textToCopy.select();
+            textToCopy.setSelectionRange(0, 99999);
+            
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        }
+        const copybtn = document.getElementById('copybtn');
+        copybtn.addEventListener('click', copyToClipboard);
+    </script>
+</body>
+</html>Please copy me

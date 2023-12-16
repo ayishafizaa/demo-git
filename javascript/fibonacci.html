@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function getFiboSeries(n) {
+        // fibonacciSeries = [1,2];
+
+        // while (fibonacciSeries.length < n) {
+        //     fibonacciSeries.push(fibonacciSeries[fibonacciSeries.length - 1] + fibonacciSeries[fibonacciSeries.length - 2]);
+        // }
+
+        // return fibonacciSeries;
+        // }
+
+        // n = 10;
+        // fibonacciSeries = getFiboSeries(n);
+
+        // document.write(`Fibonacci series of the first ${n} numbers:<br> ${fibonacciSeries.join(' <br> ')}`);
+
+        num = parseInt(prompt('Enter a number'));
+        n1 = 1;
+        n2 = 2;
+        document.write('Fibonacci series of '+ num + ':<br>')
+        for(i=0;i<num;i++){
+            document.write(n1+ '<br>');
+            val = n1+ n2;
+            n1=n2;
+            n2=val;
+        }
+    </script>
+</body>
+</html>

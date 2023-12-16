@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #datas thead th, #datas tbody td{
+            border: 1px solid black !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+       <td> Name: </td>
+       <td><input type="text" name="name" id="name"></td>
+        </tr>
+       <tr>
+        <td>Class: </td>
+        <td><input type="text" name="class" id="class"></td>
+        </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input type="email" name="email" id="email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone No.:
+            </td>
+            <td>
+                <input type="number" name="phone" id="phone">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="button" name="add" id="Add" value="Add Data"></td>
+        </tr>
+       
+    </table>
+    </form>
+
+    <table id="datas">
+        <thead>
+            <th>Sl No.</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th colspan="3">Status</th>
+        </thead>
+        <tbody id="userData">
+
+        </tbody>
+    </table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <table>
+                    <tr>
+               <td> Name: </td>
+               <td><input type="text" name="name" id="name1"></td>
+                </tr>
+               <tr>
+                <td>Class: </td>
+                <td><input type="text" name="class" id="class1"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Email:
+                    </td>
+                    <td>
+                        <input type="email" name="email" id="email1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone No.:
+                    </td>
+                    <td>
+                        <input type="number" name="phone" id="phone1">
+                    </td>
+                </tr>
+               
+            </table>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="savechanges">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const name = document.getElementById('name');
+        const std = document.getElementById('class');
+        const email = document.getElementById('email');
+        const numb = document.getElementById('phone');
+        const add = document.getElementById('Add');
+        const datas = document.getElementById('datas');
+        const Udatas = document.getElementById('userData');
+        const name1 = document.getElementById('name1');
+        const std1 = document.getElementById('class1');
+        const email1 = document.getElementById('email1');
+        const numb1 = document.getElementById('phone1');
+        const saveChanges = document.getElementById('savechanges');
+        
+
+        let counter=1;
+        
+        add.onclick = function(){
+
+            // Local storage start
+            student = {
+            name:name.value,
+            std:std.value,
+            email:email.value,
+            numb:numb.value
+            }
+            let students = JSON.parse(localStorage.getItem("students")) || [];
+            students.push(student);
+            localStorage.setItem("students",JSON.stringify(students));
+            // Local Storage end
+            render(students);
+            }
+
+            // Save Button after clicking edit button
+            saveChanges.addEventListener('click', function(){
+                editrow[1].innerHTML = name1.value;
+                editrow[2].innerHTML = std1.value;
+                editrow[3].innerHTML = email1.value;
+                editrow[4].innerHTML = numb1.value;
+            })
+
+        // To Render on to table
+        function render(students){
+            for(let i=0;i<students.length;i++){
+                student=students[i];
+
+            var row = Udatas.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            cell1.innerHTML = counter;
+            cell2.innerHTML = student.name;
+            cell3.innerHTML = student.std;
+            cell4.innerHTML = student.email;
+            cell5.innerHTML = student.numb;
+
+            // Complete Button to update status
+            statusbtn = document.createElement('button');
+            statusbtn.innerHTML = 'Complete';
+            statusbtn.addEventListener('click', function(){
+                cell6.innerHTML = 'Completed';
+            })
+            cell6.appendChild(statusbtn);
+            
+            // Edit Button
+            editbtn = document.createElement('button');
+            editbtn.innerHTML = 'Edit';
+            editbtn.setAttribute('data-bs-toggle', 'modal');
+            editbtn.setAttribute('data-bs-target', '#exampleModal');
+            editbtn.addEventListener('click', function(event){
+                editrow =event.target.parentElement.parentElement.children;
+                name1.value=editrow[1].innerHTML;
+                std1.value=editrow[2].innerHTML;
+                email1.value=editrow[3].innerHTML;
+                numb1.value=editrow[4].innerHTML;
+            })
+            cell7.appendChild(editbtn);
+            
+            // Delete Button
+            deletebtn = document.createElement('button');
+            deletebtn.innerHTML = 'Delete';
+            deletebtn.addEventListener('click', function(){
+                event.target.parentElement.parentElement.remove();
+            })
+            cell8.appendChild(deletebtn);
+            
+            // serial No. Count
+            counter++;
+            }
+        }
+    </script>
+</body>
+</html>

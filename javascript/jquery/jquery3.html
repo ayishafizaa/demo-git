@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="parent">
+        <p>This is parent div</p>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+        </ul>
+        <div class="child">
+            <p>This is child div</p>
+            <p>This is child div</p>
+            <p>This is child div</p>
+            
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var parent = $('.child').parent();
+            parent.css('background-color','blue');
+            var children = $('#parent').children();
+            console.log(children);
+            children.css('color','white');
+            var firstChild = children[0];
+            $(firstChild).css('color','red');
+            var siblings = $('.child').siblings();
+            siblings.css('border','2px solid brown');
+            console.log(siblings);
+            var first = $('p').first();
+            first.css('background-color','yellow');
+            console.log(first);
+            var last= $('p').last();
+            last.css('background-color','black');
+            console.log(last);
+            var selectindex = $('p').eq(1);
+            selectindex.css('border','5px solid wheat')
+
+        })
+    </script>
+</body>
+</html>

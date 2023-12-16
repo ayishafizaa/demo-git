@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Prompt the user for input
+num = prompt("Enter a number:");
+
+// Check if the input is a valid number
+if (!isNaN(num)) {
+  // Convert the input to a string
+ to_string = num.toString();
+  
+  // Initialize an empty string to store the formatted result
+  final = "";
+
+  // Loop through each character in the input string
+  for (i = 0; i < to_string.length; i++) {
+    // Add the character to the formatted result
+    final += to_string[i];
+
+    // Add a '+' sign if it's not the last character
+    if (i < to_string.length - 1) {
+      final += ' + ';
+    }
+  }
+
+  // Display the formatted result to the user
+ document.write(`Result: ${final}`);
+} else {
+ document.write("Invalid input. Please enter a valid number.");
+}
+</script>
+</body>
+</html>

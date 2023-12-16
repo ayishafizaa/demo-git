@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element{
+            background-color: aquamarine;
+            border: 1px solid #ffd200;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1 id="head">Heading</h1>
+    <p id="para">Helloo</p>
+    <div class="funct" style="height: 50px;">
+        Original Content
+    </div>
+    <!-- <div class="funct">
+        Another Content
+    </div> -->
+    <div id="txt" style="width: 200px;height: 300px;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, enim.</p>
+    </div>
+
+    <button id="change" onclick="changeContent()">Change Content</button>
+    <button id="remove">Remove</button>
+    <button id="empty">Empty Content</button>
+    <script>
+         $(document).ready(function(){
+            $('#para').html('<b>This is a paragraph</b>');
+            const head= $('#head').html();
+            console.log(head);
+            const txt = $('#txt').text();
+            console.log(txt);
+            const htmltxt = $('#txt').html();
+            console.log(htmltxt);
+            $('#remove').click(function(){
+                $('#txt').remove();
+            })
+            $('#empty').click(function(){
+                $('.funct').empty();
+            })
+            $('#txt').addClass('element');
+            $('#txt').attr('style','color:red');
+            var width = $('#txt').width();
+            console.log(width);
+            var outwidth = $('#txt').outerWidth();
+            console.log(outwidth);
+            var innerwidth = $('#txt').innerWidth();
+            console.log(innerwidth);
+            
+        })
+        
+        function generateNewContent(index, oldContent){
+                return '<p>New content for element '+ index + ':' + oldContent + '</p>';
+            }
+            function changeContent(){
+                $('.funct').html(generateNewContent)
+            }
+    </script>
+</body>
+</html>

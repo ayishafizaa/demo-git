@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        num1 = parseInt(prompt('Enter a number'));
+        num2 = parseInt(prompt('Enter a number'));
+        operater = prompt('Enter one of these operator +, -, *, /, %');
+        if(operater == '+'){
+            document.write('Summing up the numbers entered ', num1 + num2);
+        }
+        else if(operater == "-"){
+            document.write('Subtracting the numbers entered ', num1 - num2);
+        }
+        else if(operater == "*"){
+            document.write('Multiplying the numbers entered ', num1 * num2);
+        }
+        else if(operater == "/"){
+            document.write('Dividing the numbers entered ', num1 / num2);
+        }
+        else if(operater == "%"){
+            document.write('Remainder of the numbers entered ', num1 % num2);
+        }
+        else{
+            document.write('wrong operator');
+        }
+    </script>
+</body>
+</html>

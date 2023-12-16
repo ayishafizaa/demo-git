@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3-html</title>
+    <style>
+        *{
+            margin: auto;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        header, footer{
+            background-color: rgb(230, 224, 224);
+            color: rgb(99, 97, 97);
+            font-size: 25px;
+            font-weight: 100;
+            text-align: center;
+            border-bottom: 2px solid rgba(134, 131, 131, .2);
+            padding: 20px;
+        }
+        td{
+            color:rgb(22, 170, 170); 
+        }
+        input, span{
+            color: gray;
+        }
+        input[type="text"],input[type="password"],input[type="number"], select{
+            width: 98%;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        input[type="email"], textarea{
+            width: 99%;
+            resize: none;
+        }
+        input[type="submit"]{
+            background-color: rgb(22, 170, 170);
+            width: 150px;
+            height: 40px;
+            font-size: 25px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+        table{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create an Account</h1>
+    </header>
+    <form action="" method="get">
+        <table>
+            <tr>
+                <td>First Name*</td>
+                <td> Last Name</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="" id="" placeholder="enter your first name" required>
+                </td>
+                <td>
+                    <input type="text" name="" id="" placeholder="enter your last name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email*
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"> 
+                    <input type="email" name="" id="" placeholder="enter your email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Password*</td>
+                <td>Confirm Password*</td>
+            </tr>
+            <tr>
+                <td><input type="password" name="" id="" placeholder="enter your password" required></td>
+                <td><input type="password" name="" id="" placeholder="enter your password again" required></td>
+            </tr>
+            <tr>
+                <td>
+                    Gender:
+                </td>
+                <td>
+                    Hobbies
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="gender" id=""> <span>Male</span> 
+                    <input type="radio" name="gender" id=""> <span>Female</span>
+                </td>
+                <td>
+                    <input type="checkbox" name="" id=""><span>Music</span>
+                    <input type="checkbox" name="" id=""><span>Sports</span>
+                    <input type="checkbox" name="" id=""><span>Travel</span>
+                    <input type="checkbox" name="" id=""><span>Movies</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Source of Income
+                </td>
+                <td>
+                    Income
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="" id="">
+                        <option value="">Employed</option>
+                        <option value="">Unemployed</option>
+                        <option value="">Student</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Upload a Profile Picture
+                </td>
+                <td>
+                    Age
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    <input type="file" name="" id="">
+                </td>
+                <td>
+                    <input type="number" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Bio
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="" id="" cols="80" rows="5"></textarea>
+                </td>
+            </tr>
+        </table>
+        <footer>
+            <input type="submit" value="Create">
+        </footer>
+    </form>
+</body>
+</html>

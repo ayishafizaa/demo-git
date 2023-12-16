@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Notes App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #notes-container {
+            background-color: #fff;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #note-input {
+            height: 100px;
+            width: 50%;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        #add-button {
+            background: #3718c0;
+            color: #fff;
+            border: none;
+            width: 200px;
+            height: 70px;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        #edit-button {
+            background: #879614;
+            color: #fff;
+            border: none;
+            width: 55px;
+            height: 25px;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        #dlt-button {
+            background: #aa0808;
+            color: #fff;
+            border: none;
+            width: 55px;
+            height: 25px;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="notes-container">
+        <h1>Notes</h1>
+        <input type="text" id="note-input" placeholder="Add a new note"><br>
+        <button id="add-button">Add</button>
+        <ul id="notes-list"></ul>
+    </div>
+    
+    <script>
+        const noteInput = document.getElementById('note-input');
+        const addBtn = document.getElementById('add-button');
+        const notesList = document.getElementById('notes-list');
+        
+        let notes = JSON.parse(localStorage.getItem('notes')) || [];
+        let editIndex = -1;
+
+        const saveNotes = () => {
+            localStorage.setItem('notes', JSON.stringify(notes));
+            displayNotes();
+        };
+
+        const displayNotes = () => {
+            notesList.innerHTML = notes.map((note, index) => `
+                <li>${note} 
+                    <button id='edit-button' data-index="${index}" class="edit-button">Edit</button>
+                    <button id='dlt-button' data-index="${index}" class="delete-button">Delete</button>
+                </li>`
+            ).join('');
+            addEditListeners();
+        };
+
+        const addEditListeners = () => {
+            const editButtons = document.querySelectorAll('.edit-button');
+            const deleteButtons = document.querySelectorAll('.delete-button');
+
+            editButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = event.target.getAttribute('data-index');
+                    editIndex = parseInt(index);
+                    noteInput.value = notes[editIndex];
+                });
+            });
+
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = event.target.getAttribute('data-index');
+                    deleteNote(index);
+                });
+            });
+        };
+
+        addBtn.addEventListener('click', () => {
+            if (noteInput.value.trim()) {
+                if (editIndex !== -1) {
+                    notes[editIndex] = noteInput.value;
+                    editIndex = -1;
+                } else {
+                    notes.push(noteInput.value);
+                }
+                noteInput.value = '';
+                saveNotes();
+            }
+            displayNotes();
+        });
+
+        const deleteNote = (index) => {
+            notes.splice(index, 1);
+            saveNotes();
+            displayNotes();
+        };
+
+        displayNotes();
+    </script>
+</body>
+</html>

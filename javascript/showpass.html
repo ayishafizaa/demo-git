@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .password-container{
+            margin: 20px;
+        }
+        input[type="password"]{
+            width: 200px;
+            height: 20px;
+        }
+        #showPassword{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-container">
+    Password: <input type="password" name="password" id="password"><br>
+    <input type="checkbox" id="showPassword">Show Password
+    </div>
+
+    <script>
+        const password = document.getElementById('password');
+        const showPassword = document.getElementById('showPassword');
+
+        showPassword.addEventListener('change', function(){
+            if(showPassword.checked){
+                password.type = 'text';
+            }
+            else{
+                password.type = 'password';
+            }
+        })
+    </script>
+</body>
+</html>

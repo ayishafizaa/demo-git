@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2- html</title>
+    <style>
+       body{
+            width: 80%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        h1{
+            margin-left: 80px;
+            font-size: 30px;
+        }
+        span{
+            color: red;
+        }
+        hr{
+            border-color: rgb(77, 129, 207);
+
+        }
+        textarea{
+            resize: none;
+            border: 1px solid rgb(104, 178, 201);
+        }
+        input, select{
+            border: 1px solid rgb(104, 178, 201);
+        }
+        input[class="cp"]{
+            width: 100%;
+        }
+        input[type="submit"]{
+            margin-top: 20px;
+            margin-left: 250px;
+            height: 30px;
+            border: 2px solid rgb(46, 94, 109);
+        }
+    </style>
+</head>
+<body>
+    <h1>Request for White Paper</h1>
+    <br>
+    <p style="font-size: large;">Please fill out the form below. If you have any questions, please e-mail <br>
+    <a href="#">white_paper@ektron.com</a>.
+    <br>
+    <span>*</span> - required fields
+    </p>
+    <hr width="60%" align="left">
+    <form action="" method="get">
+    <table>
+        <tr>
+            <td>
+    <span>*</span> First Name: 
+            </td>
+            <td>
+                <input type="text" name="fname" required>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+    <span>*</span> Last Name: 
+            </td>
+            <td>
+                <input type="text" name="lname" required>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                Company Name: 
+            </td>
+            <td colspan="3">
+                <input type="text" class="cp" name="cname">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Company/ Personal Website: 
+            </td>
+            <td colspan="3">
+                <input type="text" class="cp" name="cpweb">
+            </td>
+        </tr>
+        <tr>
+            <td>
+    <span>*</span> Email: 
+            </td>
+            <td>
+                <input type="email" name="email" required>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                Phone:
+            </td>
+            <td>
+                <input type="tel" name="phone">
+            </td>
+            <td>
+                Exit:
+            </td>
+            <td>
+                <input type="text" name="exit">
+            </td>
+        </tr>
+        <tr>
+        <td>
+            State/ Province:
+        </td>
+        <td>
+            <select name="state">
+                <option value="">Select for USA or Canada Only</option>
+                <option value="">USA</option>
+                <option value="">Canada</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <span>*</span>Country:
+            </td>
+            <td>
+                <select name="country" required>
+                    <option value="">United States</option>
+                    <option value="">South America</option>
+                    <option value="">Canada</option>
+                    <option value="">North America</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Comments:</td>
+        </tr>
+    </table>
+    <textarea name="cmmnt" id="" cols="85" rows="2"></textarea><br>    
+    <input type="submit" value="Request White Paper">
+</form>
+</body>
+</html>

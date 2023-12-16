@@ -1,0 +1,47 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const notesList = document.getElementById('notesList');
+  const noteInput = document.getElementById('noteInput');
+  const addNoteBtn = document.getElementById('addNoteBtn');
+  
+  let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+  addNoteBtn.addEventListener('click', function () {
+    const newNote = noteInput.value.trim();
+    if (newNote !== '') {
+      notes.push(newNote);
+      noteInput.value = '';
+      updateNotes();
+    }
+  });
+
+  function deleteNoteAndDisplay(index) {
+    notes.splice(index, 1);
+    updateNotes();
+  }
+
+  function updateNotes() {
+    localStorage.setItem('notes', JSON.stringify(notes));
+    displayNotes();
+  }
+
+  function displayNotes() {
+    notesList.innerHTML = '';
+
+    for (let i = 0; i < notes.length; i++) {
+      const note = notes[i];
+      const li = document.createElement('li');
+      li.textContent = note;
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', function () {
+        deleteNoteAndDisplay(i);
+      });
+
+      li.appendChild(deleteButton);
+      notesList.appendChild(li);
+    }
+  }
+
+  displayNotes();
+});

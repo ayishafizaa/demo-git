@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head1{
+            font-size: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 500;
+            text-align: center;
+            background-color: chocolate;
+            color: black;
+        }
+        .clr{
+            font-size: 28px;
+            background-color: cornflowerblue;
+        }
+        *{
+            background-color: gray;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: brown;
+        }
+        .clr > p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: blueviolet;
+            background-color: coral;
+        }
+        #test > p{
+            color: blue;
+            background-color: aquamarine;
+        }
+        a[href="facebook.com"]{
+            color: black;
+            text-decoration: none;
+        }
+        button{
+            background-color:red;
+            width: 150px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+        }
+        button:hover{
+            background-color:rgb(101, 59, 197);
+        }
+        button:active{
+            color:bisque;
+            background-color: rgb(39, 15, 61);
+        }
+        .check::first-line{
+            color: rgb(69, 41, 145);
+        }
+        .check::first-letter{
+            font-size: 30px;
+            color: blue;
+        }
+        .check::before{
+            content: "Left side";
+        }
+        .check::after{
+            content: "right side";
+        }
+        .try::before{
+            display:inline-block;
+            height:50px;
+            width:50px;
+            margin-right: 5px;
+            content: "";
+            background:url("https://cdn-icons-png.flaticon.com/512/447/447031.png");
+            background-repeat: no-repeat; 
+            background-size: 50px 50px;
+        }
+        .try::after{
+            content: "Location";
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="head1" style="color: blue;">Heading</h1>
+    <p class="clr">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut voluptatibus porro iusto dolorem, amet debitis commodi! Voluptate optio rerum, quaerat quam harum dicta possimus dolorem adipisci deleniti vitae laborum quae.
+    </p>
+    <div class="clr" id="test">
+       <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sapiente, minima eos, iusto praesentium ipsam dolorum fugit veniam tenetur, illum beatae vero unde aspernatur nemo quisquam! Quo nesciunt quibusdam qui?
+    </p>
+    <a href="facebook.com">Facebook</a>
+    <a href="instagram.com">Instagram</a>
+    <a href="google.com">Google</a>
+    </div>
+    <button id="Submit">Enquire</button>
+    <p class="check">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Non, adipisci fugit repudiandae commodi unde nemo, minima temporibus laboriosam 
+         tempore accusantium impedit distinctio aspernatur facere excepturi tempora, quam expedita alias odio. 
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt vitae quasi, 
+         provident deserunt facere repellat. Sit dolorem voluptatem, fugit tenetur reprehenderit necessitatibus
+    </p>
+    <p class="try">
+    </p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function linearSearch(arr, target) {
+        // for (i = 0; i < arr.length; i++) {
+        //     if (arr[i] === target) {
+        //     return i; 
+        //     }
+        // }
+        // return -1; 
+        // }
+
+        // nums = [5, 10, 15, 20, 25, 27, 63, 54, 74, 55, 58];
+        // find = Number(prompt('Enter a number'));
+        // result = linearSearch(nums, find);
+
+        // if (result !== -1) {
+        // document.write(`Element ${find} found at index ${result}.`);
+        // } else {
+        // document.write(`Element ${find} not found in the array.`);
+        // }
+
+        numbers = [1, 4, 6, 92, 5, 2];
+        userinput = prompt('Enter a number');
+        found= false;
+        for(i=0;i<numbers.length;i++){
+            if(numbers[i]== userinput){
+            document.write(`Element found in ${i}th position`);
+            found = true;
+            }
+        }
+        if(!found){
+            document.write('Not valid');
+        }
+
+
+    </script>
+</body>
+</html>

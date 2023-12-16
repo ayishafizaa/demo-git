@@ -1,0 +1,48 @@
+Your whole life ahead as well as your career depends on your decision, for a successful career, careful planning and following it up with a workable plan is needed. The goal of this project is to guide the students in choosing the right career after school and providing a lot of career options along with the details of institutions having specific career opportunities.
+We are proposing a system in which students could register and provide information of their qualified exam and other relevant factors affecting their admission and future. 
+students can add their family details and the application will suggest suitable courses for them according to their family background. 
+The application also provides spoken english classes for the students. They can learn it in a reasonable rate. 
+
+
+Technology used:
+Front end- 
+HTML
+CSS
+Python
+ 
+Backend- 
+Django
+
+Database- 
+MySQL
+
+MODULE:
+Admin
+Student
+College
+Counselors
+placement collector
+
+
+Problem:
+In present day scenario where education has been privatized and where there is ceaseless competition amongst students and institutes, there is a need to be more organized and have the ability to make sound decisions and make constructive changes. Due to these challenges, the management is meeting the diverse needs of utilizing a decision support system for facing increased complexity in academic processes and college policies to keep their institution at a respectable position in the contest. This system helps in continuous improvements in operational strategies based on accurate, timely and consistent information.
+ The data is maintained in different departments in distributed locations.
+ Management finds it difficult to locate the reports needed by them as the data is in segregated form.
+
+ Limitations of existing system
+a. Time consumption
+b. Storage requirements
+c. Less reliable
+d. Accuracy
+
+Solution:
+
+Looking at the above mentioned problems with non-consistent data formats and individual reporting, we aim to build a system that is aimed at developing a web based application for the analysis of the students' academic performance and placement results of the institute. We will also be providing students with study material of GD/Pi processes, also various links and pdfs of related topics would be available for the students so that they may get all the guidance at one place for free. . Also some questions would be mentioned to test the behavior and work environment compatibility of the students. This would help us find and identify the overall capability of the student. The faculties would know the skill set of the students they have and can analyse which student is fit for which job, etc. Also the students can see their overall journey and try to be best than they were earlier. They can take micro-level decisions in mining functionalities and various set of algorithms to provide an evaluative interpretation of the students' data and provide clear view of the academic performance.
+
+Scope of proposed system
+The system proposed has many advantages.
+⦁	Subject selection for studies
+⦁	To choose best career
+⦁	To know chances of abroad higher studies
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function triangle(base,height){
+            var area=0.5*base*height;
+        }
+        function square(side){
+           var area=side**2;
+        }
+        function circle(radius){
+           var area=3.14*radius**2;
+        }
+
+       area = parseInt(prompt("Enter any of the following:\n 1. Area of the triangle \n 2.Area of Square \n 3. Area of Circle"));
+       switch(area){
+        case 1:{
+            base= parseInt(prompt('Enter base length'));
+            height= parseInt(prompt('Enter height length'));
+            triangle(base,height);
+            document.write(area);
+            break; 
+        }
+        case 2:{
+            side= parseInt(prompt('Enter a side length'));
+            square(side);
+            document.write(area);
+            break; 
+        }
+        case 3:{
+            radius= parseInt(prompt('Enter a radius'));
+            circle(radius);
+            document.write(area);
+            break; 
+        }
+        default: {
+                document.write("Wrong input");
+            }
+       }
+
+       
+    </script>
+</body>
+</html>

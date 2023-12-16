@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <th>
+                    <input type="text" placeholder="User Name" id="username">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="Password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="remember">Remember Me
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="LOG IN" id="login">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        const userName = document.getElementById('username');
+        const pass = document.getElementById('password');
+        const remember = document.getElementById('remember');
+        const logIn = document.getElementById('login');
+
+        // Check if the username is stored in local storage and autofill the input field
+        if (localStorage.getItem('loggers')) {
+            const loggers = JSON.parse(localStorage.getItem('loggers'));
+            const lastUser = loggers[loggers.length - 1];
+            userName.value = lastUser.name;
+        }
+
+        // Check if the "Remember Me" checkbox is checked and save user data in local storage
+        logIn.addEventListener('click', function(){
+            if (remember.checked) {
+                let user = {
+                    name: userName.value,
+                    password: pass.value
+                };
+                let loggers = JSON.parse(localStorage.getItem('loggers')) || [];
+                loggers.push(user);
+                localStorage.setItem('user', JSON.stringify(loggers));
+            }
+        });
+    </script>
+</body>
+</html>

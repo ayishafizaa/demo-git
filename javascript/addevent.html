@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <button id="removeEvent">Remove</button>
+    <button id="hello">Hello</button>
+    <button id="btn2">Event</button>
+    <script>
+        // const btn = document.getElementById('btn');
+        // btn.addEventListener('click', function(){
+        //     console.log('You clicked the button');
+        // })
+        function button(){
+            console.log('You clicked the button');
+        }
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', button)
+        
+        const remove = document.getElementById('removeEvent');
+        remove.addEventListener('click',function(){
+            btn.removeEventListener('click', button);
+        })
+        const btn1 = document.getElementById('hello');
+        btn1.onclick= function (){
+            alert('Helloo');
+        }
+        
+        const btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click',function(Event){
+            console.log(Event.target)
+        })
+
+    </script>
+</body>
+</html>

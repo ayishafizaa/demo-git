@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ints = [10, 5, 8, 20, 15, 35];
+
+        if (ints.length < 2) {
+            document.write("Array should have at least two elements");
+        } else {
+            // Sort the array in descending order
+            ints.sort((a, b) => b - a);
+            
+            // The second-largest number is now at index 1
+            const scndLarge = ints[1];
+            document.write("The second-largest number in the array is: ", scndLarge);
+        }
+
+
+    </script>
+</body>
+</html>

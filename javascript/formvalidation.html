@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="full_name" placeholder="Full Name" required><br><br>
+        <input type="email" id="mail" placeholder="Email" required><br><br>
+        <input type="number" id="pnumb" placeholder="Phone Number" required><br><br>
+        <input type="date" id="dob" placeholder="Date" required><br><br>
+        <input type="password" id="password" placeholder="Enter a Password" required><br><br>
+        <input type="password" id="confirm_pass" placeholder="Confirm Password" required><br><br>
+        <input type="button" value="Submit" id="submitbtn" onclick="validateform()">
+    </form>
+    <script>
+        function validateform(){
+        const fname =  document.getElementById('full_name').value;
+        const mail =  document.getElementById('mail').value;
+        const pnumb =  document.getElementById('pnumb').value;
+        const selectedDate = new Date(document.getElementById('dob').value);
+        const pass = document.getElementById('password').value;
+        const cpass = document.getElementById('confirm_pass').value;
+
+            if(fname==''|| mail==''|| pnumb=='' || dob=='' || pass==''|| cpass==''){
+                alert('Please Fill all fields');
+                return;
+            }
+            if(fname.split(' ').length !== 2){
+                alert('Full Name must contain atleast 2 words');
+                return;
+            }
+            var emailpattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+            if(!mail.match(emailpattern)){
+            alert('Please enter a valid email');
+            return;
+            }
+
+            const currentDate = new Date();
+            if (selectedDate > currentDate) {
+            alert('Date of Birth cannot be a future or present date');
+            return;
+            }
+
+            if(pnumb.length<10){
+                alert('Phone must contain atleast 10 digits');
+                return;
+            }
+
+            if(pass.length< 8){
+                alert('Password must contain atleast 8 charachters');
+                return;
+            }
+            var passwordpattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
+            if(!pass.match(passwordpattern)){
+                alert('Password must contain uppercase, lowercase, number and a special character');
+                return;
+            }
+            if(pass!==cpass){
+                alert("Password doesn't match");
+            }
+            else{
+                alert('Submit successful');
+            }
+
+        }
+        
+
+    </script>
+</body>
+</html>

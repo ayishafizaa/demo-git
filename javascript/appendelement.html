@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="display">Display</button>
+    <div id="main"></div>
+    <script>
+        const btn = document.getElementById('display');
+        const mssg = document.getElementById('main');
+
+        btn.addEventListener('click',function(){
+            const newLine = document.createElement("div");
+            newLine.setAttribute('id','container'); 
+            newLine.textContent = "This is a new div";
+            mssg.appendChild(newLine);
+            })
+    </script>
+</body>
+</html>

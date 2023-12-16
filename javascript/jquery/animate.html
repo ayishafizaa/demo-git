@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #div1{
+            width: 200px;
+            height: 100px;
+            background-color: #0000ff;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">Animate 1</button>
+    <div id="div1"></div>
+    <script>
+            // animate effects
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $('#div1').animate({
+                    left: '40px',
+                    top: '60px'
+                })
+            .delay(2000)
+            .animate({
+                height : '500px',
+                width : '300px'
+            })
+            .css({
+                backgroundColor:'gold',
+                borderRadius : '10px',
+                top : '30px'
+            })
+            })
+        })
+    </script>
+</body>
+</html>

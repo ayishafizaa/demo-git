@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #boxmove{
+            position: absolute;
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">Start</button>
+    <br>
+    <br>
+    <div id="boxmove"></div>
+
+    <script>
+        $(document).ready(function(){
+            $('#start').click(function(){
+                $('#boxmove').animate({
+                    height : '300px',
+                    right: '5px',
+                }, 3000)
+                .delay(3000)
+                .animate({
+                   bottom : '5px',
+                   height: '200px'
+                }, 3000)
+                .delay(3000)
+                .animate({
+                    left : '5px',
+                    height : '250px'
+                }, 3000)
+                .delay(3000)
+                .animate({
+                    top:'40px',
+                    height: '200px'
+                }, 3000)
+            })
+        })
+    </script>
+
+</body>
+</html>

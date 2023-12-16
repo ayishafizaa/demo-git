@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mypara{
+            font-size: 45px;
+            background-color: rgb(102, 82, 52);
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <h1 id="headd">
+            Lorem ipsum dolor sit amet
+        </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rerum sequi dolorem qui ab asperiores, tenetur sit in earum cumque ratione ipsum, labore alias animi minus harum expedita eaque minima!</p>
+    </div>
+    <button id="add">Add</button>
+    <button id="remove">Remove</button>
+    <script>
+        const parent = document.getElementById('parent');
+        const add = document.getElementById('add');
+        const remove = document.getElementById('remove');
+
+        add.addEventListener('click', function(){
+            const newLine = document.createElement("p");
+            newLine.setAttribute('class','mypara'); 
+            newLine.textContent = "This is a new line";
+            parent.appendChild(newLine);
+        })
+        const heading = document.getElementById('headd');
+        h1 = heading.getAttribute('id');
+        console.log(h1);
+
+        remove.addEventListener('click', function(){
+            const firstChild = parent.firstElementChild;
+            const childrens = parent.children;
+            console.log(childrens);
+            parent.removeChild(childrens[1]);
+            // parent.removeChild(firstChild);
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Select an Option</h1>
+    <select id="dropDown">
+        <option value="option1">Ayisha</option>
+        <option value="option2">Fiza</option>
+        <option value="option3">Ayisha Fiza</option>
+        <option value="option4">Fiza Ayisha</option>
+    </select>
+    <p id="message"></p>
+    <script>
+        var dropdown = document.getElementById('dropDown');
+        var message = document.getElementById('message');
+
+        dropdown.addEventListener("change", function(){
+            var selectOption = dropdown.options[dropdown.selectedIndex].text;
+            message.textContent = "You selected " + selectOption;
+        })
+    </script>
+</body>
+</html>

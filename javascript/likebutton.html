@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    .gray {
+    background-color: gray;
+    color: white;
+    }
+    .blue {
+    background-color: rgb(74, 141, 204);
+    color: rgb(14, 21, 87);
+    }
+    </style>
+</head>
+<body>
+    <button id="likeButton" class="gray">Like</button>
+    <span id="likeCount">0</span>
+    <script>
+        const likeButton = document.getElementById("likeButton");
+        const likeCount = document.getElementById("likeCount");
+        let count = 0;
+        let isLiked = false;
+
+        likeButton.addEventListener("click", function(){
+            if(!isLiked){
+                count++;
+                likeCount.textContent = count;
+                likeButton.classList.remove('gray');
+                likeButton.classList.add('blue');
+                isLiked = true;
+            }
+            else{
+                count --;
+                likeCount.textContent = count;
+                likeButton.classList.remove('blue');
+                likeButton.classList.add('gray');
+                isLiked = false;
+            }
+        });
+    </script>
+</body>
+</html>

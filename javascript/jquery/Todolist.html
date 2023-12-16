@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin-left: 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="todo" placeholder="enter a task">
+    <input type="button" id="addTask" value="Add Task">
+    <ul id="list"></ul>
+    </form>
+    <script>
+         $(document).ready(function(){
+            $('#addTask').click(function(){
+                var newItem = $("<li>").text($("#todo").val());
+                var removeButton = $("<button>").text("Remove");
+                removeButton.click(function(){
+                    $(this).parent().remove();
+                });
+                newItem.append(removeButton);
+                $("#list").append(newItem);
+                $("#todo").val("");
+            });
+        });
+
+    </script>
+</body>
+</html>

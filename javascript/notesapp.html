@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+button {
+  margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Notes App</h1>
+    <input type="text" id="noteInput" placeholder="Enter your note">
+    <button id="addNoteBtn">Add Note</button>
+    <ul id="notesList"></ul>
+  </div>
+    <script>
+      
+  const notesList = document.getElementById('notesList');
+  const noteInput = document.getElementById('noteInput');
+  const addNoteBtn = document.getElementById('addNoteBtn');
+  
+  let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+  addNoteBtn.addEventListener('click', function () {
+    const newNote = noteInput.value.trim();
+    if (newNote !== '') {
+      notes.push(newNote);
+      noteInput.value = '';
+      updateNotes();
+    }
+  });
+
+  function deleteNoteAndDisplay(index) {
+    notes.splice(index, 1);
+    updateNotes();
+  }
+
+  function updateNotes() {
+    localStorage.setItem('notes', JSON.stringify(notes));
+    displayNotes();
+  }
+
+  function displayNotes() {
+    notesList.innerHTML = '';
+
+    for (let i = 0; i < notes.length; i++) {
+      const note = notes[i];
+      const li = document.createElement('li');
+      li.textContent = note;
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', function () {
+        deleteNoteAndDisplay(i);
+      });
+
+      li.appendChild(deleteButton);
+      notesList.appendChild(li);
+    }
+  }
+
+  displayNotes();
+    </script>
+</body>
+</html>

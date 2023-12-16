@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>3</li>
+        <li>7</li>
+        <li>0</li>
+        <li>2</li>
+        <li>1</li>
+    </ul>
+    <button id="ascend">Ascending</button>
+    <button id="descend">Descend</button>
+    <script>
+        const alist = document.getElementById('list');
+        const descend = document.getElementById('descend');
+        const ascend = document.getElementById('ascend');
+        listChild = alist.children;
+
+        alistarray = [];
+        for(item of listChild){
+            alistarray.push(item.innerHTML);
+        }
+       
+
+        ascend.onclick= function(){
+            alistarray.sort();
+            for(let i in listChild){
+                listChild[i].innerHTML=alistarray[i];
+            }
+        }
+
+        descend.onclick= function(){
+            alistarray.sort();
+            alistarray.reverse();
+            for(let i in listChild){
+                listChild[i].innerHTML=alistarray[i];
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+@media screen and (max-width:768px){
+    #container{
+        display: block;
+    }
+    .body , .body2{
+        float: left;
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+        Name: </td></tr>
+        <tr>
+            <td><input type="text" id="name">
+    </td></tr>
+    <tr>
+        <td>
+        Email: </td></tr>
+        <tr>
+            <td><input type="email" id="email">
+    </td></tr>
+    <tr>
+        <td>
+        Password: </td></tr>
+        <tr>
+            <td><input type="password" id="pass">
+    </td></tr>
+    <tr>
+        <td>
+        Phone No.:</td></tr>
+        <tr>
+            <td> <input type="number" id="number">
+    </td></tr>
+    <tr>
+        <td>
+        <input type="button" id="submit_btn" value="Submit" onclick="validateForm()">
+    </td></tr>
+    </table>
+    </form>
+    <p id="error"></p>
+    <script>
+        function validateForm(){
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const numb = document.getElementById('number').value;
+        const pass = document.getElementById('pass').value;
+        const sbtn = document.getElementById('submit_btn').value;
+        const error = document.getElementById('error');
+
+        
+        if(name==''|| email==''|| numb=='' || pass==''){
+            error.innerHTML= 'Please Fill all the boxes';
+            return;
+        }
+        var emailpattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+        if(!email.match(emailpattern)){
+            error.innerHTML= 'Please enter a valid email';
+            return;
+        }
+
+        var phonepattern = /^\d{10}$/;
+        if(!numb.match(phonepattern)){
+            error.innerHTML='Please enter a valid Phone number';
+            return;
+        }
+        error.innerHTML= '';
+        }
+    </script>
+</body>
+</html>

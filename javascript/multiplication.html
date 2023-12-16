@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const inputNumber = Number(prompt('Enter a number to display its Multiplication table'));
+        const tableLimit = 10;
+
+
+        for (let i = 1; i <= tableLimit; i++) {
+        const result = inputNumber * i;
+        document.write(`${i} x ${inputNumber} = ${result}`);
+        document.write('<br>');
+        }
+
+    </script>
+</body>
+</html>

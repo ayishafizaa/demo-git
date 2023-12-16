@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        month= prompt("Enter a month to find the season");
+        if(month.toLowerCase() == "january"|| month.toLowerCase() == "february" || month.toLowerCase() == "march"){
+            document.write("Spring season");
+        }        
+        else if(month.toLowerCase() == "april"|| month.toLowerCase() == "may" || month.toLowerCase() == "june"){
+            document.write("Summer season");
+        }
+        else if(month.toLowerCase() == "july"|| month.toLowerCase() == "august" || month.toLowerCase() == "september"){
+            document.write("Monsoon season");
+        }
+        else if(month.toLowerCase() == "october"|| month.toLowerCase() == "november" || month.toLowerCase() == "december"){
+            document.write("Winter season");
+        }
+        else{
+            document.write("wrong month");
+        }
+    </script>
+</body>
+</html>

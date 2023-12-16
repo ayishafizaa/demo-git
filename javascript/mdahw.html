@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        items = parseInt(prompt('Enter how many Fruits required'));
+        fruits= [];
+        fruits[0]=[''];
+        fruits[1]=[];
+        sum=0;
+        for(i=0;i<items;i++){
+            fruits[0][i]=prompt('Enter a Fruit');
+            fruits[1][i]=parseInt(prompt('Enter the Price for the fruit'));
+        }
+        document.write('<table border="1"><tr><th>Fruits</th><th>Price</th></tr>');
+        for(j=0;j<items;j++){
+            document.write(`<tr><td>${fruits[0][j]}</td><td>${fruits[1][j]}</td></tr>`);
+            sum = sum + fruits[1][j] ;
+        }
+        document.write(`<tr><td>Total</td><td>${sum}</td></tr>`);
+        document.write('</table>');
+        
+
+    </script>
+</body>
+</html>

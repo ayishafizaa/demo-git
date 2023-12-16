@@ -1,0 +1,99 @@
+1. HTML Questions:
+
+What does HTML stand for, and what is its primary purpose?
+How do you create a hyperlink in HTML?
+What is the difference between HTML elements and HTML tags?
+Explain the importance of using semantic HTML elements.
+What is the purpose of the HTML <meta> tag, and how is it used in web development?
+Explain the difference between HTML elements and HTML attributes.
+How do you create an HTML form, and what are some common form elements?
+What is the role of the HTML5 <canvas> element, and how can you use it to draw graphics and animations?
+
+2. CSS Questions:
+
+What does CSS stand for, and what is its main role in web development?
+How can you include CSS styles in an HTML document?
+What is the difference between inline, internal, and external CSS?
+How do you select and style elements using class and ID selectors in CSS?
+How can you center align an element both horizontally and vertically using CSS?
+Describe the box model in CSS and its components.
+What is the difference between margin and padding in CSS, and how do they affect the layout of elements?
+What is CSS specificity, and how does it determine which styles are applied to an element?
+
+
+3. JavaScript Questions:
+
+What is JavaScript, and what are some common use cases for it in web development?
+Explain the difference between "let," "const," and "var" when declaring variables in JavaScript.
+How do you write a basic function in JavaScript?
+What is the Document Object Model (DOM), and how is it related to JavaScript in web development?
+Explain the concept of "hoisting" in JavaScript and provide an example.
+How do you handle asynchronous operations in JavaScript, and what are Promises and async/await used for?
+Describe the difference between "null" and "undefined" in JavaScript.
+What is the purpose of closures in JavaScript, and when might you use them in your code?
+
+4. GIT Questions:
+
+Git Basics:
+
+What is Git, and why is it essential for version control in software development?
+Explain the difference between Git and GitHub.
+How do you initialize a Git repository in a local directory?
+
+
+Repository Management:
+
+What is a Git repository, and what files or directories does it typically include?
+How do you add changes to the staging area in Git, and why is this step necessary before committing?
+How do you commit changes in a Git repository, and what should a good commit message include?
+
+
+Branching and Merging:
+
+What is a Git branch, and why is branching often used in collaborative development?
+How do you create a new branch in Git, and how do you switch between branches?
+Explain the process of merging one branch into another in Git.
+
+
+Remote Repositories:
+
+What is a remote repository in Git, and why is it useful for collaboration?
+How do you connect a local Git repository to a remote repository (e.g., on GitHub)?
+What are common Git commands for fetching, pulling, and pushing changes to a remote repository?
+
+
+Conflict Resolution:
+
+What is a Git merge conflict, and how can you resolve it?
+Describe the steps to resolve a merge conflict in Git when working with others on the same codebase.
+
+
+Git Best Practices:
+
+What are some best practices for using Git in a collaborative development environment?
+How can Git branching and version control help manage software development workflows and releases?
+
+
+5. Web Development Questions:
+
+What is the difference between client-side and server-side scripting in web development?
+Explain the importance of responsive web design and how you can achieve it.
+What is the purpose of HTTP and HTTPS in web communication, and how do they differ?
+How does a web browser render a web page, and what is the critical rendering path?
+What are web cookies, and how are they commonly used in web applications?
+
+
+6. Web Hosting and Deployment Questions:
+
+What are some popular web hosting options, and what factors should you consider when choosing one for a website?
+Explain the difference between a domain name and web hosting.
+How can you deploy a static website, and how does it differ from deploying a dynamic website?
+What is version control, and why is it essential in web development and collaboration?
+
+
+7. Web Security Questions:
+
+What are some common web security threats, and how can you protect a web application against them?
+What is Cross-Site Scripting (XSS), and how can you prevent it in web development?
+Describe the concept of SQL injection and how it can be mitigated.
+What are Content Security Policy (CSP) headers, and how do they enhance web security?

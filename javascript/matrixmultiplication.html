@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const matrixA = [
+        [2, 3],
+        [4, 1],
+        ];
+
+        const matrixB = [
+        [5, 6],
+        [7, 8],
+        ];
+
+        const result = [];
+
+        for (let i = 0; i < matrixA.length; i++) {
+        result[i] = [];
+        for (let j = 0; j < matrixB[0].length; j++) {
+            let sum = 0;
+            for (let k = 0; k < matrixA[0].length; k++) {
+            sum += matrixA[i][k] * matrixB[k][j];
+            }
+            result[i][j] = sum;
+        }
+        }
+
+        document.write(result);
+    </script>
+</body>
+</html>

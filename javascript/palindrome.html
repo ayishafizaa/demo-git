@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // function isPalindrome(str) {
+        // cleanedStr = str.toLowerCase();
+        // reversedStr = cleanedStr.split('').reverse().join('');
+        // return cleanedStr === reversedStr;
+        // }
+
+        // userInput = prompt('Enter a string:');
+
+        // if (isPalindrome(userInput)) {
+        // document.write('Entered string is a palindrome.');
+        // } else {
+        // document.write('Not a palindrome.');
+        // }
+
+        userInput=prompt('Enter a value to check if Palindrome');
+        final = userInput.split('').reverse().join('');
+        if(userInput === final){
+            document.write('Entered value is a palindrome');
+        }
+        else{
+            document.write('Entered value not a palindrome');
+        }
+
+
+    </script>
+</body>
+</html>

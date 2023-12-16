@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.task-form {
+    margin-bottom: 20px;
+}
+
+.task-list {
+    text-align: left;
+    margin: 0 auto;
+    width: 300px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+    </style>
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <div class="task-form">
+        <input type="text" id="task" placeholder="Add a task...">
+        <button id="addTask">Add</button>
+    </div>
+    <div class="task-list">
+        <ul id="tasks">
+            <!-- Tasks will be displayed here -->
+        </ul>
+        <button id="clearCompleted">Clear Completed</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const taskInput = document.getElementById("task");
+    const addTaskButton = document.getElementById("addTask");
+    const taskList = document.getElementById("tasks");
+    const clearCompletedButton = document.getElementById("clearCompleted");
+
+    addTaskButton.addEventListener("click", addTask);
+
+    clearCompletedButton.addEventListener("click", clearCompleted);
+
+    taskList.addEventListener("click", (event) => {
+        const taskItem = event.target;
+        if (taskItem.classList.contains("complete-button")) {
+            toggleTask(taskItem.parentNode);
+        }
+    });
+
+    function addTask() {
+        const taskText = taskInput.value.trim();
+        if (taskText) {
+            const taskItem = createTaskElement(taskText);
+            taskList.appendChild(taskItem);
+            taskInput.value = "";
+            saveTasks();
+        }
+    }
+
+    function clearCompleted() {
+        Array.from(taskList.children).forEach((task) => {
+            if (task.classList.contains("completed")) {
+                task.remove();
+            }
+        });
+        saveTasks();
+    }
+
+    function toggleTask(taskItem) {
+        taskItem.classList.toggle("completed");
+        saveTasks();
+    }
+
+    function createTaskElement(text) {
+        const taskItem = document.createElement("li");
+        const completeButton = document.createElement("button");
+        completeButton.textContent = "Complete";
+        completeButton.className = "complete-button";
+        taskItem.textContent = text;
+        taskItem.appendChild(completeButton);
+        return taskItem;
+    }
+
+    function saveTasks() {
+        const tasks = Array.from(taskList.children).map((task) => ({
+            text: task.textContent,
+            completed: task.classList.contains("completed"),
+        }));
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.forEach((task) => {
+            const taskItem = createTaskElement(task.text);
+            if (task.completed) {
+                taskItem.classList.add("completed");
+            }
+            taskList.appendChild(taskItem);
+        });
+    }
+
+    loadTasks();
+});
+</script>
+</body>
+</html>

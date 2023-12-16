@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post full view</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+        }
+        div{
+            margin: 0 auto;
+            max-width: 800px;
+            height: auto;
+            margin-top: 50px;
+            background-color: beige;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 20px;
+            box-shadow: 0px 12px 20px rgb(175, 175, 125);
+            padding: 50px;
+        }
+        #postTitle{
+            font-size: 40px;
+            padding: 10px;
+            font-weight: 500;
+            color: rgb(176, 142, 97);
+        }
+        #postContent{
+            font-size: 28px;
+            padding: 0 50px 50px;
+            text-align: justify;
+            font-weight: 400;
+            margin-top: 50px;
+            color: rgb(128, 100, 64);   
+        }
+        #postAuthor, #postDate{
+            display: inline;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 22px;
+            color: rgb(139, 94, 34);
+            text-transform: capitalize;
+        }
+        span{
+            font-weight: 700;
+            font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="postTitle"></h1>
+        <p id="postContent"></p>
+        <p id="postAuthor"></p>
+        <p id="postDate"></p>
+    </div>
+    <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const post = params.get('post');
+    const author = params.get('author');
+    const date = params.get('date');
+
+    document.getElementById('postTitle').innerText = title;
+    document.getElementById('postContent').innerText = post;
+    document.getElementById('postAuthor').innerHTML = '<span>Author:</span> ' + author;
+    document.getElementById('postDate').innerHTML = '<span>Date: </span>' + date;
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Heading</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        .blue-heading {
+            height: 130px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(48, 100, 222);
+            font-size: 25px;
+            color: white; /* You can also set the text color to white for better visibility */
+            padding: 10px; /* Add padding for better spacing */
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            height: 550px;
+            padding: 50px 10px;
+            width: 100%;
+        }
+
+        .mark_attendence {
+            background-color: lightblue;
+            padding: 20px;
+            width: 40%;
+            float: left;
+            border: 3px solid lightblue;
+            height: 100%;
+        }
+
+        .view_attendence {
+            height: 100%;
+            width: 45%;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+        label{
+            font-size: 22px;
+            letter-spacing: 1px;
+            padding: 5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+        }
+        input{
+            width: 70%;
+            border: none;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        #attendence_mark{
+            width: 100%;
+            margin: 20px 0;
+            border: 3px solid rgb(149, 149, 236);
+        }
+        #attendence_mark tr, #attendence_mark th, #attendence_mark td{
+            border: 3px solid rgb(149, 149, 236);
+            padding: 5px;
+            text-align: center;
+
+        }
+        .sno{
+            width: 10%;
+        }
+        .marking{
+            width: 14%;
+        }
+        #attendence_mark th{
+            font-size: 19px;
+            font-weight: 700;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #attendence_mark td{
+            font-size: 18px;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #submitButton{
+            width: 150px;
+            height: 50px;
+            border: 3px solid rgb(75, 176, 243);
+            border-radius: 50px;
+            color: rgb(75, 176, 243);
+            font-size: 15px;
+            font-weight: 600;
+            background-color: rgb(212, 248, 248);
+            cursor: pointer;
+        }
+        #viewAttendanceTable{
+            width: 100%;
+            margin: 20px 0;
+            border: 3px solid rgb(255, 255, 255);
+        }
+        
+        #viewAttendanceTable tr, #viewAttendanceTable th, #viewAttendanceTable td{
+            border: 3px solid rgb(255, 255, 255);
+            padding: 5px;
+            text-align: center;
+
+        }
+        #viewAttendanceTable th{
+            font-size: 19px;
+            font-weight: 700;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #viewAttendanceTable td{
+            font-size: 18px;
+            font-weight: 500;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #viewButton{
+            width: 250px;
+            height: 50px;
+            border: 3px solid rgb(255, 255, 255);
+            border-radius: 50px;
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+            margin: 10px 0 5px 0;
+            font-weight: 600;
+            background-color: rgb(209, 184, 201);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue-heading">
+        <h1>
+            Attendence App
+        </h1>
+    </div>
+    <div class="flex-container">
+        <div class="mark_attendence">
+            <label for="dateInput">Select a Date:</label>
+            <input type="date" id="dateInput" name="dateInput">
+            <table id="attendence_mark">
+                <thead>
+                    <tr>
+                        <th class="sno">Sl No.</th>
+                        <th>Students Name</th>
+                        <th class="marking">Present</th>
+                        <th class="marking">Absent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Student 1</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present1"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent1"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Student 2</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present2"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent2"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Student 3</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present3"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent3"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Student 4</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present4"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent4"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Student 5</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present5"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent5"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Student 6</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present6"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent6"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Student 7</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present7"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent7"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Student 8</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present8"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent8"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Student 9</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present9"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent9"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Student 10</td>
+                        <td><input type="checkbox" class="present-checkbox" name="present10"></td>
+                        <td><input type="checkbox" class="absent-checkbox" name="absent10"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="submitButton">
+                Save Attendence
+            </button>
+        </div>
+        <div class="view_attendence">
+            <label for="viewDateInput">
+                Select a Date:
+            </label>
+            <input type="date" id="viewDateInput" name="viewDateInput">
+            <button id="viewButton">View Attendance Sheet</button>
+            <table id="viewAttendanceTable">
+                <thead>
+                    <tr>
+                        <th class="sno">Sl. No</th>
+                        <th>Student Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="viewAttendanceData">
+                    <!-- Data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const submitButton = document.getElementById("submitButton");
+        const dateInput = document.getElementById("dateInput");
+        let attendanceData = JSON.parse(localStorage.getItem("attendanceData")) || [];
+
+        submitButton.addEventListener("click", function () {
+            const date = dateInput.value;
+
+            if (date === "") {
+                alert("Enter the date.");
+                return; // Stop the function if the date field is empty
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                const presentCheckbox = document.querySelector(`input[name=present${i}]`);
+                const absentCheckbox = document.querySelector(`input[name=absent${i}]`);
+                const studentName = `Student ${i}`;
+
+                if (presentCheckbox.checked) {
+                    addAttendance(date, studentName, "present");
+                } else if (absentCheckbox.checked) {
+                    addAttendance(date, studentName, "absent");
+                }
+            }
+
+            // Store the updated attendance data in local storage
+            localStorage.setItem("attendanceData", JSON.stringify(attendanceData));
+
+            // Reset the form by clearing the date input and unchecking checkboxes
+            dateInput.value = "";
+            for (let i = 1; i <= 10; i++) {
+                document.querySelector(`input[name=present${i}]`).checked = false;
+                document.querySelector(`input[name=absent${i}]`).checked = false;
+            }
+        });
+
+        function addAttendance(date, student, status) {
+            attendanceData.push({ date, student, status });
+        }
+
+
+        // VIEW ATTENDANCE SCRIPT
+
+        const viewButton = document.getElementById("viewButton");
+        const viewDateInput = document.getElementById("viewDateInput");
+        const viewAttendanceTable = document.getElementById("viewAttendanceTable");
+        const viewAttendanceData = document.getElementById("viewAttendanceData");
+
+        viewButton.addEventListener("click", function () {
+            const date = viewDateInput.value;
+
+            if (date === "") {
+                alert("Select a date to view attendance.");
+            } else {
+                // Check if the date is stored in local storage
+                const attendanceData = JSON.parse(localStorage.getItem("attendanceData")) || [];
+
+                const studentsForDate = attendanceData.filter(entry => entry.date === date);
+
+                if (studentsForDate.length > 0) {
+                    // Display the students' names, status, and serial numbers in a table
+                    viewAttendanceData.innerHTML = ""; // Clear previous data
+
+                    studentsForDate.forEach((entry, index) => {
+                        const row = document.createElement("tr");
+                        const serialCell = document.createElement("td");
+                        const nameCell = document.createElement("td");
+                        const statusCell = document.createElement("td");
+
+                        serialCell.textContent = index + 1;
+                        nameCell.textContent = entry.student;
+                        statusCell.textContent = entry.status;
+
+                        row.appendChild(serialCell);
+                        row.appendChild(nameCell);
+                        row.appendChild(statusCell);
+                        viewAttendanceData.appendChild(row);
+                    });
+
+                    viewAttendanceTable.style.display = "table"; // Show the table
+                }
+                else {
+                    alert("No attendance data found for the selected date.");
+                    viewAttendanceTable.style.display = "none"; // Hide the table
+                }
+            }
+        });
+    });
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 5;
+        let b = 10;
+
+        document.write("<b><u>Before Swap</u></b>: <br>");
+        document.write('Actual value of "a" is: '+ a + ', <br>');
+        document.write('Actual value of "b" is: '+b + '<br><br>');
+
+        [a, b] = [b, a];
+
+        document.write("<b><u>After Swap</u></b>:<br>");
+        document.write('Swapped value of "a" is: '+a+ ', <br>');
+        document.write('Swapped value of "b" is: '+b);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Authentication</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            margin: 0;
+            padding: 0;
+            font-size: 30px;
+            color: antiquewhite;
+        }
+        h1{
+            text-align: center;
+            font-size: 55px;
+            color: rgb(11, 37, 61);
+        }
+        table{
+            width: 100%;
+            height: 80vh;
+            margin: 0;
+        }
+        #sign {
+            padding: 150px;
+            background-color: rgb(57, 94, 204);
+            width: 48%;
+        }
+        #log {
+            padding: 150px;
+            width: 48%;
+            background-color: rgb(36, 112, 125);
+        }
+        #sign h2{
+            font-size: 35px;
+            color: antiquewhite;
+            text-align: left;
+        }
+        input{
+            width: 50%;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+        #sign-up{
+            width: 100px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgb(14, 14, 105);
+            color: antiquewhite;
+            border: none;
+        }
+        #sign-up:hover{
+            background-color: antiquewhite;
+            color: rgb(14, 14, 105);
+        }
+        #log-in{
+            width: 100px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgb(105, 99, 14);
+            color: antiquewhite;
+            border: none;
+        }
+        #log-in:hover{
+            background-color: antiquewhite;
+            color: rgb(105, 99, 14);
+        }
+        #message{
+            color: rgb(239, 241, 239);
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Authentication</h1>
+    <table>
+        <tr>
+            <td id="sign">
+                <h2>Sign Up</h2>
+                <form id="signup-form" onsubmit="return handleForm('signup');">
+                    Username: <input type="text" id="signup-username" required><br>
+                    Password: <input type="password" id="signup-password" required><br>
+                    <button type="submit" id="sign-up">Sign Up</button>
+                </form>
+            </td>
+            <td id="log">
+                <h2>Login</h2>
+                <form id="login-form" onsubmit="return handleForm('login');">
+                    Username: <input type="text" id="login-username" required><br>
+                    Password: <input type="password" id="login-password" required><br>
+                    <button type="submit" id="log-in">Login</button>
+                </form>
+                <div id="message"></div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        const showMessage = (text) => {
+            document.getElementById('message').textContent = text;
+        };
+
+        const handleForm = (formId) => {
+            const username = document.getElementById(`${formId}-username`).value;
+            const password = document.getElementById(`${formId}-password`).value;
+            const storedPassword = localStorage.getItem(username);
+
+            if (formId === 'signup') {
+                if (localStorage.getItem(username) !== null) {
+                    alert("Username already exists. Please choose another.");
+                    return false;
+                } else {
+                    localStorage.setItem(username, password);
+                    alert("Account created successfully. You can now log in.");
+                    username = '';
+                    password = '';
+                    return false;
+                }
+            } else if (formId === 'login') {
+                if (storedPassword === null) {
+                    showMessage("Login failed. Please check your credentials.");
+                    return false;
+                } else if (storedPassword === password) {
+                    showMessage("Login successful.");
+                    return false;
+                    username = '';
+                    password = '';
+                } else {
+                    showMessage("Login failed. Please check your credentials.");
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

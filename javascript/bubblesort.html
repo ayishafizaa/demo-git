@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bubble = [139, 64, 34, 25, 12, 22, 11, 90, 6];
+        const n = bubble.length;
+        let swap;
+
+        do {
+        swap = false;
+
+        for (let i = 0; i < n - 1; i++) {
+            if (bubble[i] > bubble[i + 1]) {
+            [bubble[i], bubble[i + 1]] = [bubble[i + 1], bubble[i]];
+            swap = true;
+            }
+        }
+        } while (swap);
+
+        document.write(bubble); // [11, 12, 22, 25, 34, 64, 90]
+
+    </script>
+</body>
+</html>
